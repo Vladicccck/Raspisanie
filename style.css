@@ -1,27 +1,67 @@
 ```css
 /* Общие настройки */
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Segoe UI', Roboto, sans-serif;
     background-color: #f0f4f8;
     color: #333;
     margin: 0;
-    padding: 20px 10px;
+    padding: 40px 10px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* Контейнер */
+/* ДЕКОРАТИВНЫЙ МАТЕМАТИЧЕСКИЙ ФОН ДЛЯ ПК */
+.math-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Фон находится под главным окном */
+    pointer-events: none; /* Чтобы формулы нельзя было случайно выделить мыкой */
+}
+
+.math-item {
+    position: absolute;
+    font-weight: bold;
+    user-select: none;
+}
+
+/* Стиль для формул (светло-серый, научно-академический) */
+.math-item.formula {
+    font-family: 'Cambria', 'Times New Roman', serif;
+    font-size: 20px;
+    color: #b0c4de;
+    opacity: 0.6;
+}
+
+/* Стиль для инструментов */
+.math-item.tool {
+    font-size: 15px;
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px dashed #cbd5e1;
+    opacity: 0.7;
+}
+
+/* ГЛАВНЫЙ СМАРТФОН-КОНТЕЙНЕР С ПОДНЯТЫМ Z-INDEX */
 .container {
     width: 100%;
     max-width: 480px;
-    background: white;
+    background: rgba(255, 255, 255, 0.96); /* Слегка прозрачный, чтобы фон мягко считывался */
+    backdrop-filter: blur(10px); /* Красивое размытие под картой */
     padding: 25px;
     border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 15px 35px rgba(26, 42, 58, 0.08);
+    position: relative;
+    z-index: 10; /* Карточка всегда поверх фона */
 }
 
 /* ГЛАВНОЕ МЕНЮ НАВИГАЦИИ */
@@ -35,10 +75,10 @@ body {
 
 .nav-link {
     flex: 1;
-    padding: 12px;
+    padding: 12px 4px;
     border: none;
     background: none;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     color: #718096;
     cursor: pointer;
@@ -52,16 +92,16 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* УПРАВЛЕНИЕ СТРАНИЦАМИ */
+/* СТРАНИЦЫ СТИЛИ */
 .site-page {
-    display: none; /* Скрываем страницы по умолчанию */
+    display: none;
 }
 
 .site-page.active {
-    display: block; /* Показываем только активную */
+    display: block;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
     color: #1a2a3a;
     margin-bottom: 5px;
@@ -76,7 +116,7 @@ h1 {
     font-size: 14px;
 }
 
-/* НАВИГАЦИЯ ПО ДНЯМ */
+/* ДНИ НЕДЕЛИ */
 .days-nav {
     display: flex;
     gap: 4px;
@@ -106,7 +146,7 @@ h1 {
     box-shadow: 0 4px 12px rgba(49, 130, 206, 0.25);
 }
 
-/* РАСПИСАНИЕ */
+/* СПИСОК ЧАСОВ */
 .day-content {
     display: none;
 }
@@ -165,22 +205,24 @@ h1 {
     font-size: 15px;
 }
 
-.slot-action {
+/* Кнопка записи */
+.slot-action-btn {
     font-size: 13px;
     background-color: #38a169;
     color: white;
     padding: 8px 14px;
     border-radius: 10px;
     font-weight: bold;
-    text-decoration: none;
+    border: none;
+    cursor: pointer;
     transition: 0.2s;
 }
 
-.slot-action:hover {
+.slot-action-btn:hover {
     background-color: #2f855a;
 }
 
-/* СТИЛИ СТРАНИЦЫ "О БО МНЕ" */
+/* АНКЕТА О БО МНЕ */
 .about-content {
     display: flex;
     flex-direction: column;
@@ -208,31 +250,11 @@ h1 {
     line-height: 1.5;
 }
 
-/* БЛОК С КОНТАКТАМИ */
-.contacts-section {
-    margin-top: 40px;
-    padding-top: 30px;
-    border-top: 2px dashed #e2e8f0;
-}
-
-.contacts-section h2 {
-    font-size: 18px;
-    color: #1a2a3a;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.contacts-hint {
-    font-size: 13px;
-    color: #718096;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
+/* СТРАНИЦА С КНОПКАМИ СВЯЗИ */
 .contacts-grid {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .contact-btn {
@@ -256,3 +278,13 @@ h1 {
 .contact-btn.wa { background-color: #25d366; }
 .contact-btn.max-platform { background-color: #6b46c1; }
 .contact-btn.email { background-color: #ea4335; }
+
+/* АДАПТИВНОСТЬ: Скрываем летающие формулы на телефонах */
+@media (max-width: 900px) {
+    .math-background {
+        display: none;
+    }
+    body {
+        padding: 15px 5px;
+    }
+}
