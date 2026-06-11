@@ -8,9 +8,8 @@
 </head>
 <body>
 
-    <!-- МАТЕМАТИЧЕСКИЙ ФОН ИЗ ФОРМУЛ И ИНСТРУМЕНТОВ (Для ПК) -->
+    <!-- МАТЕМАТИЧЕСКИЙ ФОН ИЗ ФОРМУЛ И ИНСТРУМЕНТОВ -->
     <div class="math-background">
-        <!-- Формулы и графики -->
         <div class="math-item formula" style="top: 10%; left: 5%;">E = mc²</div>
         <div class="math-item formula" style="top: 25%; left: 8%;">f(x) = ax² + bx + c</div>
         <div class="math-item formula" style="top: 45%; left: 4%;">sin²α + cos²α = 1</div>
@@ -23,24 +22,23 @@
         <div class="math-item formula" style="top: 68%; right: 8%;">S = pr</div>
         <div class="math-item formula" style="top: 88%; right: 5%;">∫ f(x)dx = F(x) + C</div>
 
-        <!-- Математические инструменты -->
         <div class="math-item tool" style="top: 18%; left: 12%;">📐 Линейка & Треугольник</div>
         <div class="math-item tool" style="top: 55%; left: 10%;">✏️ Карандаш & Ручка</div>
         <div class="math-item tool" style="top: 78%; left: 11%;">🌐 Координатная сетка</div>
 
         <div class="math-item tool" style="top: 22%; right: 10%;">📍 Циркуль</div>
-        <div class="math-item tool" style="top: 40%; right: 11%;">🧭 Транспортир</div>
+        <div class="math-item tool" style="top: 40%; right: 11%;">🧭 :Транспортир</div>
         <div class="math-item tool" style="top: 75%; right: 9%;">📊 График функции</div>
     </div>
 
-    <!-- ГЛАВНЫЙ КОНТЕНТНЫЙ БЛОК (Смартфон-окошко) -->
+    <!-- ГЛАВНЫЙ КОНТЕНТНЫЙ БЛОК -->
     <div class="container">
         
-        <!-- ГЛАВНОЕ МЕНЮ САЙТА (Теперь 3 кнопки) -->
+        <!-- ГЛАВНОЕ МЕНЮ САЙТА -->
         <nav class="main-nav">
-            <button id="btn-schedule" class="nav-link active" onclick="switchPage('schedule-page', event)">📅 Расписание</button>
-            <button id="btn-about" class="nav-link" onclick="switchPage('about-page', event)">👨‍🏫 Обо мне</button>
-            <button id="btn-contacts" class="nav-link" onclick="switchPage('contacts-page', event)">📱 Контакты</button>
+            <button id="btn-schedule" class="nav-link active" onclick="switchPage('schedule-page', this)">📅 Расписание</button>
+            <button id="btn-about" class="nav-link" onclick="switchPage('about-page', this)">👨‍🏫 Обо мне</button>
+            <button id="btn-contacts" class="nav-link" onclick="switchPage('contacts-page', this)">📱 Контакты</button>
         </nav>
 
         <!-- ================= СТРАНИЦА: РАСПИСАНИЕ ================= -->
@@ -49,13 +47,13 @@
             <p class="subtitle">Выберите день недели, чтобы посмотреть актуальное время</p>
             
             <div class="days-nav">
-                <button class="day-btn active" onclick="showDay('monday', event)">ПН</button>
-                <button class="day-btn" onclick="showDay('tuesday', event)">ВТ</button>
-                <button class="day-btn" onclick="showDay('wednesday', event)">СР</button>
-                <button class="day-btn" onclick="showDay('thursday', event)">ЧТ</button>
-                <button class="day-btn" onclick="showDay('friday', event)">ПТ</button>
-                <button class="day-btn weekend" onclick="showDay('saturday', event)">СБ</button>
-                <button class="day-btn weekend" onclick="showDay('sunday', event)">ВС</button>
+                <button class="day-btn active" onclick="showDay('monday', this)">ПН</button>
+                <button class="day-btn" onclick="showDay('tuesday', this)">ВТ</button>
+                <button class="day-btn" onclick="showDay('wednesday', this)">СР</button>
+                <button class="day-btn" onclick="showDay('thursday', this)">ЧТ</button>
+                <button class="day-btn" onclick="showDay('friday', this)">ПТ</button>
+                <button class="day-btn weekend" onclick="showDay('saturday', this)">СБ</button>
+                <button class="day-btn weekend" onclick="showDay('sunday', this)">ВС</button>
             </div>
 
             <div class="timetable">
@@ -138,4 +136,6 @@
             </div>
         </div>
 
-        <!-- ================= СТРАНИЦА: КОНТАКТЫ (Новое меню) ================= -->
+        <!-- ================= СТРАНИЦА: КОНТАКТЫ ================= -->
+        <div id="contacts-page" class="site-page">
+            <h2>📱 Связаться со мной</h2>
