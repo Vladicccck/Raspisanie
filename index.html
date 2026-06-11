@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Репетитор | Влад</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- ГЛАВНОЕ МЕНЮ САЙТА -->
+        <nav class="main-nav">
+            <button class="nav-link active" onclick="switchPage('schedule-page', event)">静态 Расписание</button>
+            <button class="nav-link" onclick="switchPage('about-page', event)">👨‍🏫 Обо мне</button>
+        </nav>
+
+        <!-- ================= СТРАНИЦА: РАСПИСАНИЕ ================= -->
+        <div id="schedule-page" class="site-page active">
+            <h1>Свободные окошки для занятий</h1>
+            <p class="subtitle">Выберите день недели, чтобы посмотреть актуальное время</p>
+            
+            <div class="days-nav">
+                <button class="day-btn active" onclick="showDay('monday', event)">ПН</button>
+                <button class="day-btn" onclick="showDay('tuesday', event)">ВТ</button>
+                <button class="day-btn" onclick="showDay('wednesday', event)">СР</button>
+                <button class="day-btn" onclick="showDay('thursday', event)">ЧТ</button>
+                <button class="day-btn" onclick="showDay('friday', event)">ПТ</button>
+                <button class="day-btn weekend" onclick="showDay('saturday', event)">СБ</button>
+                <button class="day-btn weekend" onclick="showDay('sunday', event)">ВС</button>
+            </div>
+
+            <div class="timetable">
+                <!-- ПОНЕДЕЛЬНИК -->
+                <div id="monday" class="day-content active">
+                    <div class="slot-card free"><div class="slot-time">16:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card busy"><div class="slot-time">17:00</div><div class="slot-status">Занято</div></div>
+                    <div class="slot-card busy"><div class="slot-time">18:00</div><div class="slot-status">Занято</div></div>
+                    <div class="slot-card busy"><div class="slot-time">19:00</div><div class="slot-status">Занято</div></div>
+                    <div class="slot-card free"><div class="slot-time">20:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                </div>
+
+                <!-- ВТОРНИК -->
+                <div id="tuesday" class="day-content">
+                    <div class="slot-card busy"><div class="slot-time">16:00</div><div class="slot-status">Занято</div></div>
+                    <div class="slot-card free"><div class="slot-time">17:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card free"><div class="slot-time">18:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card busy"><div class="slot-time">19:00</div><div class="slot-status">Занято</div></div>
+                    <div class="slot-card busy"><div class="slot-time">20:00</div><div class="slot-status">Занято</div></div>
+                </div>
+
+                <!-- СРЕДА -->
+                <div id="wednesday" class="day-content">
+                    <div class="slot-card free"><div class="slot-time">16:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card free"><div class="slot-time">17:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card busy"><div class="slot-time">18:00</div><div class="slot-status">Занято</div></div>
+                    <div class="slot-card busy"><div class="slot-time">19:00</div><div class="slot-status">Занято</div></div>
+                    <div class="slot-card free"><div class="slot-time">20:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                </div>
+
+                <!-- ЧЕТВЕРГ -->
+                <div id="thursday" class="day-content">
+                    <div class="slot-card busy"><div class="slot-time">16:00</div><div class="slot-status">Занято</div></div>
+                    <div class="slot-card busy"><div class="slot-time">17:00</div><div class="slot-status">Занято</div></div>
+                    <div class="slot-card free"><div class="slot-time">18:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card free"><div class="slot-time">19:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card busy"><div class="slot-time">20:00</div><div class="slot-status">Занято</div></div>
+                </div>
+
+                <!-- ПЯТНИЦА -->
+                <div id="friday" class="day-content">
+                    <div class="slot-card free"><div class="slot-time">15:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card free"><div class="slot-time">16:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card busy"><div class="slot-time">17:00</div><div class="slot-status">Занято</div></div>
+                    <div class="slot-card busy"><div class="slot-time">18:00</div><div class="slot-status">Занято</div></div>
+                    <div class="slot-card busy"><div class="slot-time">19:00</div><div class="slot-status">Занято</div></div>
+                </div>
+
+                <!-- СУББОТА -->
+                <div id="saturday" class="day-content">
+                    <div class="slot-card free"><div class="slot-time">11:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card free"><div class="slot-time">12:30</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card busy"><div class="slot-time">14:00</div><div class="slot-status">Занято</div></div>
+                </div>
+
+                <!-- ВОСКРЕСЕНЬЕ -->
+                <div id="sunday" class="day-content">
+                    <div class="weekend-message">
+                        <p>🔒 Воскресенье — выходной день.</p>
+                        <p>Вы можете записаться на будни или субботу!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= СТРАНИЦА: О Б О  М Н Е ================= -->
+        <div id="about-page" class="site-page">
+            <h1>Приветствую! Меня зовут Влад 👋</h1>
+            <p class="subtitle">Помогаю ученикам понять предмет и сдать экзамены без стресса</p>
+            
+            <div class="about-content">
+                <div class="about-block">
+                    <h3>🎓 Образование и Опыт</h3>
+                    <p>Здесь ваш текст.</p>
+                </div>
+                <div class="about-block">
+                    <h3>🎯 Моя методика</h3>
+                    <p>Здесь ваш текст.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК С КОНТАКТАМИ -->
+        <div id="contacts" class="contacts-section">
+            <h2>📱 Связаться со мной</h2>
+            <p class="contacts-hint">Выберите удобный способ, чтобы забронировать свободное время:</p>
+            
+            <div class="contacts-grid">
+                <a href="https://t.me" target="_blank" class="contact-btn tg">💬 Telegram</a>
+                <a href="https://wa.me!" target="_blank" class="contact-btn wa">🟢 WhatsApp</a>
+                <a href="https://max.ru" target="_blank" class="contact-btn max-platform">⚡ Написать на Макс</a>
+                <a href="mailto:vlad2001kazan@mail.ru" class="contact-btn email">✉️ vlad2001kazan@mail.ru</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Исправленный и надежный скрипт переключения -->
+    <script>
+        function switchPage(pageId, event) {
+            const pages = document.querySelectorAll('.site-page');
+            pages.forEach(p => p.classList.remove('active'));
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            document.getElementById(pageId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function showDay(dayId, event) {
+            const contents = document.querySelectorAll('.day-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            const buttons = document.querySelectorAll('.day-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(dayId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+```css
+/* Общие настройки */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Контейнер */
+.container {
+    width: 100%;
+    max-width: 480px;
+    background: white;
+    padding: 25px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* ГЛАВНОЕ МЕНЮ НАВИГАЦИИ */
+.main-nav {
+    display: flex;
+    background-color: #edf2f7;
+    padding: 6px;
+    border-radius: 14px;
+    margin-bottom: 30px;
+}
+
+.nav-link {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: #718096;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.nav-link.active {
+    background-color: white;
+    color: #2b6cb0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* УПРАВЛЕНИЕ СТРАНИЦАМИ */
+.site-page {
+    display: none; /* Скрываем страницы по умолчанию */
+}
+
+.site-page.active {
+    display: block; /* Показываем только активную */
+}
+
+h1 {
+    text-align: center;
+    color: #1a2a3a;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #718096;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+/* НАВИГАЦИЯ ПО ДНЯМ */
+.days-nav {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 25px;
+}
+
+.day-btn {
+    flex: 1;
+    padding: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #edf2f7;
+    color: #4a5568;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.day-btn.weekend {
+    color: #e53e3e;
+}
+
+.day-btn.active {
+    background-color: #3182ce;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.25);
+}
+
+/* РАСПИСАНИЕ */
+.day-content {
+    display: none;
+}
+
+.day-content.active {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.slot-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+.slot-time {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.slot-status {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.slot-card.free {
+    background-color: #f0fff4;
+    border-left: 6px solid #38a169;
+}
+.slot-card.free .slot-status {
+    color: #38a169;
+}
+
+.slot-card.busy {
+    background-color: #f7fafc;
+    border-left: 6px solid #cbd5e0;
+    opacity: 0.5;
+}
+.slot-card.busy .slot-status {
+    color: #a0aec0;
+}
+
+.weekend-message {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #fffaf0;
+    border: 1px dashed #dd6b20;
+    border-radius: 14px;
+    color: #dd6b20;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.slot-action {
+    font-size: 13px;
+    background-color: #38a169;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.slot-action:hover {
+    background-color: #2f855a;
+}
+
+/* СТИЛИ СТРАНИЦЫ "О БО МНЕ" */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.about-block {
+    background-color: #f8fafc;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+.about-block h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #2b6cb0;
+    font-size: 16px;
+}
+
+.about-block p {
+    margin: 0;
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+/* БЛОК С КОНТАКТАМИ */
+.contacts-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px dashed #e2e8f0;
+}
+
+.contacts-section h2 {
+    font-size: 18px;
+    color: #1a2a3a;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.contacts-hint {
+    font-size: 13px;
+    color: #718096;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contacts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-btn {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.contact-btn.tg { background-color: #0088cc; }
+.contact-btn.wa { background-color: #25d366; }
+.contact-btn.max-platform { background-color: #6b46c1; }
+.contact-btn.email { background-color: #ea4335; }
