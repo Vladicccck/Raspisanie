@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Репетитор | Влад</title>
+    <title>Репетитор | Владислав Евгеньевич</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         
         <!-- ГЛАВНОЕ МЕНЮ САЙТА -->
         <nav class="main-nav">
-            <button class="nav-link active" onclick="switchPage('schedule-page', event)">静态 Расписание</button>
+            <button class="nav-link active" onclick="switchPage('schedule-page', event)">📅 Расписание</button>
             <button class="nav-link" onclick="switchPage('about-page', event)">👨‍🏫 Обо мне</button>
         </nav>
 
@@ -21,6 +21,7 @@
             <h1>Свободные окошки для занятий</h1>
             <p class="subtitle">Выберите день недели, чтобы посмотреть актуальное время</p>
             
+            <!-- Навигация по дням -->
             <div class="days-nav">
                 <button class="day-btn active" onclick="showDay('monday', event)">ПН</button>
                 <button class="day-btn" onclick="showDay('tuesday', event)">ВТ</button>
@@ -96,37 +97,43 @@
 
         <!-- ================= СТРАНИЦА: О Б О  М Н Е ================= -->
         <div id="about-page" class="site-page">
-            <h1>Приветствую! Меня зовут Влад 👋</h1>
+            <h1>Приветствую! Я Владислав Евгеньевич 👋</h1>
             <p class="subtitle">Помогаю ученикам понять предмет и сдать экзамены без стресса</p>
             
             <div class="about-content">
                 <div class="about-block">
-                    <h3>🎓 Образование и Опыт</h3>
-                    <p>Здесь ваш текст.</p>
+                    <h3>🎓 Образование и опыт</h3>
+                    <p>Через меня прошло уже более 300 учеников разного уровня.</p>
                 </div>
                 <div class="about-block">
-                    <h3>🎯 Моя методика</h3>
-                    <p>Здесь ваш текст.</p>
+                    <h3>🎯 Мои цели</h3>
+                    <p>Я стремлюсь показать детям красоту математики. И у меня это получается, потому что я нахожу подход к разным детям.</p>
                 </div>
             </div>
         </div>
 
-        <!-- БЛОК С КОНТАКТАМИ -->
+        <!-- БЛОК С ОБНОВЛЕННЫМИ КОНТАКТАМИ -->
         <div id="contacts" class="contacts-section">
             <h2>📱 Связаться со мной</h2>
             <p class="contacts-hint">Выберите удобный способ, чтобы забронировать свободное время:</p>
             
             <div class="contacts-grid">
+                <!-- Telegram -->
                 <a href="https://t.me" target="_blank" class="contact-btn tg">💬 Telegram</a>
-                <a href="https://wa.me!" target="_blank" class="contact-btn wa">🟢 WhatsApp</a>
+                
+                <!-- WhatsApp -->
+                <a href="https://wa.me" target="_blank" class="contact-btn wa">🟢 WhatsApp</a>
+                
+                <!-- Макс -->
                 <a href="https://max.ru" target="_blank" class="contact-btn max-platform">⚡ Написать на Макс</a>
+                
+                <!-- Почта -->
                 <a href="mailto:vlad2001kazan@mail.ru" class="contact-btn email">✉️ vlad2001kazan@mail.ru</a>
             </div>
         </div>
 
     </div>
 
-    <!-- Исправленный и надежный скрипт переключения -->
     <script>
         function switchPage(pageId, event) {
             const pages = document.querySelectorAll('.site-page');
