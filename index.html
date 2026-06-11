@@ -27,7 +27,7 @@
         <div class="math-item tool" style="top: 78%; left: 11%;">🌐 Координатная сетка</div>
 
         <div class="math-item tool" style="top: 22%; right: 10%;">📍 Циркуль</div>
-        <div class="math-item tool" style="top: 40%; right: 11%;">🧭 :Транспортир</div>
+        <div class="math-item tool" style="top: 40%; right: 11%;">🧭 Транспортир</div>
         <div class="math-item tool" style="top: 75%; right: 9%;">📊 График функции</div>
     </div>
 
@@ -118,7 +118,6 @@
                 </div>
             </div>
         </div>
-
         <!-- ================= СТРАНИЦА: О Б О  М Н Е ================= -->
         <div id="about-page" class="site-page">
             <h1>Приветствую! Я Владислав Евгеньевич 👋</h1>
@@ -139,3 +138,54 @@
         <!-- ================= СТРАНИЦА: КОНТАКТЫ ================= -->
         <div id="contacts-page" class="site-page">
             <h2>📱 Связаться со мной</h2>
+            <p class="subtitle">Выберите удобный способ, чтобы забронировать свободное время:</p>
+            
+            <div class="contacts-grid">
+                <a href="https://t.me" target="_blank" class="contact-btn tg">💬 Telegram</a>
+                <a href="https://wa.me" target="_blank" class="contact-btn wa">🟢 WhatsApp</a>
+                <a href="https://max.ru" target="_blank" class="contact-btn max-platform">⚡ Написать на Макс</a>
+                <a href="mailto:vlad2001kazan@mail.ru" class="contact-btn email">✉️ vlad2001kazan@mail.ru</a>
+            </div>
+        </div>
+
+    </div> <!-- Закрытие главного контейнера .container -->
+
+    <!-- СКРИПТ ПЕРЕКЛЮЧЕНИЯ СТРАНИЦ -->
+    <script>
+        function switchPage(pageId, buttonElement) {
+            const pages = document.querySelectorAll('.site-page');
+            pages.forEach(p => p.classList.remove('active'));
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            document.getElementById(pageId).classList.add('active');
+            
+            if (buttonElement) {
+                buttonElement.classList.add('active');
+            }
+        }
+
+        function goToContacts() {
+            switchPage('contacts-page', null);
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            document.getElementById('btn-contacts').classList.add('active');
+        }
+
+        function showDay(dayId, buttonElement) {
+            const contents = document.querySelectorAll('.day-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            const buttons = document.querySelectorAll('.day-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(dayId).classList.add('active');
+            if (buttonElement) {
+                buttonElement.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
