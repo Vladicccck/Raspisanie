@@ -8,12 +8,39 @@
 </head>
 <body>
 
+    <!-- МАТЕМАТИЧЕСКИЙ ФОН ИЗ ФОРМУЛ И ИНСТРУМЕНТОВ (Для ПК) -->
+    <div class="math-background">
+        <!-- Формулы и графики -->
+        <div class="math-item formula" style="top: 10%; left: 5%;">E = mc²</div>
+        <div class="math-item formula" style="top: 25%; left: 8%;">f(x) = ax² + bx + c</div>
+        <div class="math-item formula" style="top: 45%; left: 4%;">sin²α + cos²α = 1</div>
+        <div class="math-item formula" style="top: 70%; left: 7%;">x₁,₂ = (-b ± √D) / 2a</div>
+        <div class="math-item formula" style="top: 85%; left: 3%;">V = πr²h</div>
+        
+        <div class="math-item formula" style="top: 12%; right: 5%;">a² + b² = c²</div>
+        <div class="math-item formula" style="top: 30%; right: 7%;">lim (x→0) sin(x)/x = 1</div>
+        <div class="math-item formula" style="top: 50%; right: 4%;">logₐ(xy) = logₐx + logₐy</div>
+        <div class="math-item formula" style="top: 68%; right: 8%;">S = pr</div>
+        <div class="math-item formula" style="top: 88%; right: 5%;">∫ f(x)dx = F(x) + C</div>
+
+        <!-- Математические инструменты -->
+        <div class="math-item tool" style="top: 18%; left: 12%;">📐 Линейка & Треугольник</div>
+        <div class="math-item tool" style="top: 55%; left: 10%;">✏️ Карандаш & Ручка</div>
+        <div class="math-item tool" style="top: 78%; left: 11%;">🌐 Координатная сетка</div>
+
+        <div class="math-item tool" style="top: 22%; right: 10%;">📍 Циркуль</div>
+        <div class="math-item tool" style="top: 40%; right: 11%;">🧭 Транспортир</div>
+        <div class="math-item tool" style="top: 75%; right: 9%;">📊 График функции</div>
+    </div>
+
+    <!-- ГЛАВНЫЙ КОНТЕНТНЫЙ БЛОК (Смартфон-окошко) -->
     <div class="container">
         
-        <!-- ГЛАВНОЕ МЕНЮ САЙТА -->
+        <!-- ГЛАВНОЕ МЕНЮ САЙТА (Теперь 3 кнопки) -->
         <nav class="main-nav">
-            <button class="nav-link active" onclick="switchPage('schedule-page', event)">📅 Расписание</button>
-            <button class="nav-link" onclick="switchPage('about-page', event)">👨‍🏫 Обо мне</button>
+            <button id="btn-schedule" class="nav-link active" onclick="switchPage('schedule-page', event)">📅 Расписание</button>
+            <button id="btn-about" class="nav-link" onclick="switchPage('about-page', event)">👨‍🏫 Обо мне</button>
+            <button id="btn-contacts" class="nav-link" onclick="switchPage('contacts-page', event)">📱 Контакты</button>
         </nav>
 
         <!-- ================= СТРАНИЦА: РАСПИСАНИЕ ================= -->
@@ -21,7 +48,6 @@
             <h1>Свободные окошки для занятий</h1>
             <p class="subtitle">Выберите день недели, чтобы посмотреть актуальное время</p>
             
-            <!-- Навигация по дням -->
             <div class="days-nav">
                 <button class="day-btn active" onclick="showDay('monday', event)">ПН</button>
                 <button class="day-btn" onclick="showDay('tuesday', event)">ВТ</button>
@@ -35,44 +61,44 @@
             <div class="timetable">
                 <!-- ПОНЕДЕЛЬНИК -->
                 <div id="monday" class="day-content active">
-                    <div class="slot-card free"><div class="slot-time">16:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card free"><div class="slot-time">16:00</div><div class="slot-status">Свободно</div><button class="slot-action-btn" onclick="goToContacts()">Записаться</button></div>
                     <div class="slot-card busy"><div class="slot-time">17:00</div><div class="slot-status">Занято</div></div>
                     <div class="slot-card busy"><div class="slot-time">18:00</div><div class="slot-status">Занято</div></div>
                     <div class="slot-card busy"><div class="slot-time">19:00</div><div class="slot-status">Занято</div></div>
-                    <div class="slot-card free"><div class="slot-time">20:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card free"><div class="slot-time">20:00</div><div class="slot-status">Свободно</div><button class="slot-action-btn" onclick="goToContacts()">Записаться</button></div>
                 </div>
 
                 <!-- ВТОРНИК -->
                 <div id="tuesday" class="day-content">
                     <div class="slot-card busy"><div class="slot-time">16:00</div><div class="slot-status">Занято</div></div>
-                    <div class="slot-card free"><div class="slot-time">17:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
-                    <div class="slot-card free"><div class="slot-time">18:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card free"><div class="slot-time">17:00</div><div class="slot-status">Свободно</div><button class="slot-action-btn" onclick="goToContacts()">Записаться</button></div>
+                    <div class="slot-card free"><div class="slot-time">18:00</div><div class="slot-status">Свободно</div><button class="slot-action-btn" onclick="goToContacts()">Записаться</button></div>
                     <div class="slot-card busy"><div class="slot-time">19:00</div><div class="slot-status">Занято</div></div>
                     <div class="slot-card busy"><div class="slot-time">20:00</div><div class="slot-status">Занято</div></div>
                 </div>
 
                 <!-- СРЕДА -->
                 <div id="wednesday" class="day-content">
-                    <div class="slot-card free"><div class="slot-time">16:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
-                    <div class="slot-card free"><div class="slot-time">17:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card free"><div class="slot-time">16:00</div><div class="slot-status">Свободно</div><button class="slot-action-btn" onclick="goToContacts()">Записаться</button></div>
+                    <div class="slot-card free"><div class="slot-time">17:00</div><div class="slot-status">Свободно</div><button class="slot-action-btn" onclick="goToContacts()">Записаться</button></div>
                     <div class="slot-card busy"><div class="slot-time">18:00</div><div class="slot-status">Занято</div></div>
                     <div class="slot-card busy"><div class="slot-time">19:00</div><div class="slot-status">Занято</div></div>
-                    <div class="slot-card free"><div class="slot-time">20:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card free"><div class="slot-time">20:00</div><div class="slot-status">Свободно</div><button class="slot-action-btn" onclick="goToContacts()">Записаться</button></div>
                 </div>
 
                 <!-- ЧЕТВЕРГ -->
                 <div id="thursday" class="day-content">
                     <div class="slot-card busy"><div class="slot-time">16:00</div><div class="slot-status">Занято</div></div>
                     <div class="slot-card busy"><div class="slot-time">17:00</div><div class="slot-status">Занято</div></div>
-                    <div class="slot-card free"><div class="slot-time">18:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
-                    <div class="slot-card free"><div class="slot-time">19:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card free"><div class="slot-time">18:00</div><div class="slot-status">Свободно</div><button class="slot-action-btn" onclick="goToContacts()">Записаться</button></div>
+                    <div class="slot-card free"><div class="slot-time">19:00</div><div class="slot-status">Свободно</div><button class="slot-action-btn" onclick="goToContacts()">Записаться</button></div>
                     <div class="slot-card busy"><div class="slot-time">20:00</div><div class="slot-status">Занято</div></div>
                 </div>
 
                 <!-- ПЯТНИЦА -->
                 <div id="friday" class="day-content">
-                    <div class="slot-card free"><div class="slot-time">15:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
-                    <div class="slot-card free"><div class="slot-time">16:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card free"><div class="slot-time">15:00</div><div class="slot-status">Свободно</div><button class="slot-action-btn" onclick="goToContacts()">Записаться</button></div>
+                    <div class="slot-card free"><div class="slot-time">16:00</div><div class="slot-status">Свободно</div><button class="slot-action-btn" onclick="goToContacts()">Записаться</button></div>
                     <div class="slot-card busy"><div class="slot-time">17:00</div><div class="slot-status">Занято</div></div>
                     <div class="slot-card busy"><div class="slot-time">18:00</div><div class="slot-status">Занято</div></div>
                     <div class="slot-card busy"><div class="slot-time">19:00</div><div class="slot-status">Занято</div></div>
@@ -80,8 +106,8 @@
 
                 <!-- СУББОТА -->
                 <div id="saturday" class="day-content">
-                    <div class="slot-card free"><div class="slot-time">11:00</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
-                    <div class="slot-card free"><div class="slot-time">12:30</div><div class="slot-status">Свободно</div><a href="#contacts" class="slot-action">Записаться</a></div>
+                    <div class="slot-card free"><div class="slot-time">11:00</div><div class="slot-status">Свободно</div><button class="slot-action-btn" onclick="goToContacts()">Записаться</button></div>
+                    <div class="slot-card free"><div class="slot-time">12:30</div><div class="slot-status">Свободно</div><button class="slot-action-btn" onclick="goToContacts()">Записаться</button></div>
                     <div class="slot-card busy"><div class="slot-time">14:00</div><div class="slot-status">Занято</div></div>
                 </div>
 
@@ -112,51 +138,4 @@
             </div>
         </div>
 
-        <!-- БЛОК С ОБНОВЛЕННЫМИ КОНТАКТАМИ -->
-        <div id="contacts" class="contacts-section">
-            <h2>📱 Связаться со мной</h2>
-            <p class="contacts-hint">Выберите удобный способ, чтобы забронировать свободное время:</p>
-            
-            <div class="contacts-grid">
-                <!-- Telegram -->
-                <a href="https://t.me" target="_blank" class="contact-btn tg">💬 Telegram</a>
-                
-                <!-- WhatsApp -->
-                <a href="https://wa.me" target="_blank" class="contact-btn wa">🟢 WhatsApp</a>
-                
-                <!-- Макс -->
-                <a href="https://max.ru" target="_blank" class="contact-btn max-platform">⚡ Написать на Макс</a>
-                
-                <!-- Почта -->
-                <a href="mailto:vlad2001kazan@mail.ru" class="contact-btn email">✉️ vlad2001kazan@mail.ru</a>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
-        function switchPage(pageId, event) {
-            const pages = document.querySelectorAll('.site-page');
-            pages.forEach(p => p.classList.remove('active'));
-
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => link.classList.remove('active'));
-
-            document.getElementById(pageId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-
-        function showDay(dayId, event) {
-            const contents = document.querySelectorAll('.day-content');
-            contents.forEach(content => content.classList.remove('active'));
-            
-            const buttons = document.querySelectorAll('.day-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            
-            document.getElementById(dayId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-    </script>
-
-</body>
-</html>
+        <!-- ================= СТРАНИЦА: КОНТАКТЫ (Новое меню) ================= -->
